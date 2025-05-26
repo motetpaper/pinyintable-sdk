@@ -23,6 +23,18 @@ foo() {
     return
   fi
 
+  if [[ -z $(command -v jq) ]]; then
+    msg 'jq missing, run setup'
+    msg '$ bash setup.sh'
+    return
+  fi
+
+  if [[ -z $(command -v tree) ]]; then
+    msg 'tree missing, run setup'
+    msg '$ bash setup.sh'
+    return
+  fi
+
   if [[ "$1" ]]; then
 
     pytext="$1"
@@ -72,18 +84,19 @@ foo() {
 }
 MOO
 
-  cat req.json
+    cat req.json
 
-  curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" \
     -H "x-goog-user-project: ${GOOGLE_CLOUD_PROJECT}" \
     -H "Content-Type: application/json; charset=utf-8" \
     -d @req.json "https://texttospeech.googleapis.com/v1/text:synthesize" > tmp.json
 
-  sleep 2
+    sleep 2
 
-  cat tmp.json | jq -r .audioContent | base64 --decode > $fnpath
+    cat tmp.json | jq -r .audioContent | base64 --decode > $fnpath
+    sleep 2
 
-  sleep 2
+    tree ${outdir}
   }
 
   text=$pytext

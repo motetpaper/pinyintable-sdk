@@ -23,14 +23,22 @@ You can use a **pinyintable** for:
 
 ## Before we begin
 
-If you are an absolute beginner, you should read the Google Cloud TTS Quick Start tutorial.
+If you are an absolute beginner, you should first read the Google Cloud TTS Quick Start tutorial.
 
-## Requirements
+## Recommended
+  + Google Cloud Shell
+    + https://shell.cloud.google.com
 
-  + Google Cloud Shell (preferred)
-    + https://shell.cloud.google.com/
-    + many dev tools are already pre-installed
+## Required
 
+  + bash
+  + gcloud
+  + yq
+  + jq
+  + tree
+  + nano
+  + git
+  + zip
 
 ## SETUP
 
@@ -81,7 +89,7 @@ The file size should be "8.0K". If the file is less than 8K, check the `tmp.json
 
 You can generate multiple pinyin sounds at the same time using `buildu.sh` and `user.req.txt`
 
-## `user.req.txt`
+## `user.req.txt` and `buildu.sh`
 
 Add one pinyin syllable per line.
 
@@ -102,6 +110,33 @@ Then, run `buildu.sh` to convert each syllable.
 $ bash buildu.sh
 ```
 
-### More ways to select lots of pinyin
+## More ways to select lots of pinyin
 
 View `pset.datadict` for details.
+
+
+# More tools
+
+
+## `check.sh`
+
+Validates outfiles, saves results to log files.
+```bash
+$ bash check.sh
+```
+
+## `clean.sh`
+
+Tabla rasa. Removes tempfiles and outfiles.
+```bash
+$ bash clean.sh
+```
+
+## `export.sh`
+
+Google Cloud Shell Only. Archives and downloads valid mp3 outfiles.
+```bash
+$ bash export.sh
+```
+
+

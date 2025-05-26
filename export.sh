@@ -14,18 +14,29 @@ msg() {
   echo "[$PROG] $1"
 }
 
-if [[ -z $(command -v cloudshell) ]]; then
-  msg 'not in google cloudshell, nothing exported'
-else
-  bash check.sh
+foo() {
 
-  if test -d out/ ;then
-    rm -rfv out.zip
-    zip -r out.zip $(cat valid.log)
-    cloudshell download-file out.zip
-  else
-    msg "nothing to export"
+  if [[ -z $(command -v zip) ]]; then
+    msg 'zip missing, run setup'
+    msg '$ bash setup.sh'
+    return
   fi
 
-fi
+  if [[ -z $(command -v cloudshell) ]]; then
+    msg 'not in google cloudshell, nothing exported'
+  else
+    bash check.sh
+
+    if test -d out/ ;then
+      rm -rfv out.zip
+      zip -r out.zip $(cat valid.log)
+      cloudshell download-file out.zip
+    else
+      msg "nothing to export"
+    fi
+
+  fi
+}
+
+foo
 
