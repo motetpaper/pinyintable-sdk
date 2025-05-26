@@ -58,9 +58,13 @@ Authenticate.
 $ gcloud init
 ```
 
-In the repo root, run setup:
+In the repo root ...
 ```bash
 $ cd pinyintable-sdk
+
+
+Run setup.
+```bash
 $ bash setup.sh
 ```
 
