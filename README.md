@@ -109,7 +109,7 @@ kuai4
 le4
 ````
 
-Then, run `buildu.sh` to convert each syllable.
+Then, run `buildu.sh` to convert each line.
 
 ```bash
 $ bash buildu.sh
@@ -139,7 +139,7 @@ $ bash clean.sh
 
 ## `export.sh`
 
-**Google Cloud Shell in web browsers only.** Checks for valid mp3 files, then downloads a zip archive of valid mp3 to the desktop.
+**Google Cloud Shell in web browsers only.** Checks for valid mp3 files, then downloads a zip archive of valid audio files to the desktop.
 ```bash
 $ bash export.sh
 ```
