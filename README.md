@@ -83,12 +83,19 @@ $ bash check.sh
 
 The files `valid.log` and/or `invalid.log` should appear in the root repo. 
 
-Double-check:
+You can review them:
+```bash
+$ cat valid.log
+```
+
+Double-check the files with another method::
 ```bash
 $ ls -sh out
 ```
 
-The file size should be "8.0K" or larger. If the file is less than 8K, check the `tmp.json` for possible errors.
+The file size should be "8.0K" or larger. 
+
+If the file is less than 8K, check the `tmp.json` intermediate file for possible errors.
 
 # Batch processing
 
