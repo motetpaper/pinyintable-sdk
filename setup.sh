@@ -28,9 +28,6 @@ foo () {
   msg "adding requried packages"
   sudo apt install git tree nano zip jq yq bc -y
 
-  # authenticate
-  gcloud init
-
   GOOGLE_CLOUD_PROJECT=$(gcloud config get-value core/project)
   msg "gcp: ${GOOGLE_CLOUD_PROJECT}"
 
