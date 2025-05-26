@@ -50,6 +50,7 @@ foo () {
     gcloud iam service-accounts keys create ${KEYPATH}   --iam-account ${FOOKEY}@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
   fi
 
+  touch user.req.txt
 }
 
 foo

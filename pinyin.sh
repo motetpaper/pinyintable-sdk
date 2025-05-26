@@ -17,6 +17,12 @@ msg() {
 ## foo method
 foo() {
 
+  if [[ -z $(command -v yq) ]]; then
+    msg 'yq missing, run setup'
+    msg '$ bash setup.sh'
+    return
+  fi
+
   if [[ "$1" ]]; then
 
     pytext="$1"
@@ -41,15 +47,24 @@ foo() {
 
   req() {
 
-  echo "..." && cat << MOO > req.json && echo "req.json... done."
+  VCODE=$(yq -r '.voice.languageCode' config.yaml)
+  VNAME=$(yq -r '.voice.name' config.yaml)
+  VGENDER=$(yq -r '.voice.gender' config.yaml)
+
+  ## debug
+  # msg $VCODE
+  # msg $VNAME
+  # msg $VGENDER
+
+  msg "..." && cat << MOO > req.json && msg "req.json... done."
 {
   "input": {
       "ssml": "<speak><phoneme alphabet='pinyin' ph='${text}'>${text}</phoneme></speak>"
   },
   "voice": {
-    "languageCode": "cmn-CN",
-    "name": "cmn-CN-STANDARD-A",
-    "ssmlGender": "FEMALE"
+    "languageCode": "${VCODE}",
+    "name": "${VNAME}",
+    "ssmlGender": "${VGENDER}"
   },
   "audioConfig": {
     "audioEncoding": "MP3"
