@@ -6,17 +6,17 @@ The purpose of the pinyintable is provide a readily-available library of pinyin 
 
 You can serve these files over HTTPS, or you can cache them locally. Also, you can combine them in various ways and/or with other software packages.
 
-This repo provides a resource for using the voice, language and other options available in the Google Cloud TTS for the specific purpose of generating Hanyu Pinyin sound files.
-
-You can change the options in the `config.yaml` file.
-
 You can use a **pinyintable** for:
   + Pinyin text-to-speech services
   + Audio flashcards
   + Pronunciation practice
   + Spaced-repitition system listening practice
   + Mandarin Chinese videos or shorts on YouTube
-  + PowerPoint slide presentations.
+  + PowerPoint slide presentations
+
+This repo provides a resource for using the voice, language and other options available in the Google Cloud TTS for the specific purpose of generating Hanyu Pinyin sound files.
+
+You can change the options in the `config.yaml` file.
 
 >[!IMPORTANT]
 > Documentation is in progress. For now, only workflows are available.
