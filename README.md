@@ -61,7 +61,7 @@ $ gcloud init
 In the repo root ...
 ```bash
 $ cd pinyintable-sdk
-
+```
 
 Run setup.
 ```bash
