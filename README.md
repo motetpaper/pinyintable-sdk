@@ -30,7 +30,7 @@ If you are an absolute beginner, you should first read the Google Cloud TTS Quic
 ## Recommended
   + Google Cloud Shell
     + https://shell.cloud.google.com
-    + a lot of the dev tools tou need are pre-installed
+    + a lot of the dev tools you need are pre-installed
 
 ## Required
 
