@@ -50,7 +50,7 @@ Clone the repo.
 $ git clone https://github.com/motetpaper/pinyintable-sdk
 ````
 
->[!CRITICAL]
+>[!IMPORTANT]
 > If you do not authenticate, you will not have access to restricted Google Cloud resources.
 
 Authenticate.
