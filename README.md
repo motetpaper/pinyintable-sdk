@@ -50,7 +50,7 @@ Clone the repo.
 $ git clone https://github.com/motetpaper/pinyintable-sdk
 ````
 
->[!IMPORTANT]
+>[!CRITICAL]
 > If you do not authenticate, you will not have access to restricted Google Cloud resources.
 
 Authenticate.
@@ -73,20 +73,22 @@ Generate one syllable at a time with Google Cloud TTS.
 $ bash pinyin.sh hao3
 ```
 
-The `out/` folder is generated. Check if your file is successfully created.
+The `out/` folder is generated. 
+
+Check if your file in the folder has been successfully created and is a valid MPEG file.
 
 ```bash
 $ bash check.sh
 ```
 
-The file `valid.log` should appear. The generated file should in that log.
+The files `valid.log` and/or `invalid.log` should appear in the root repo. 
 
 Double-check:
 ```bash
 $ ls -sh out
 ```
 
-The file size should be "8.0K". If the file is less than 8K, check the `tmp.json` for possible errors.
+The file size should be "8.0K" or larger. If the file is less than 8K, check the `tmp.json` for possible errors.
 
 # Batch processing
 
