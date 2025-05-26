@@ -1,0 +1,14 @@
+# work folders
+out/
+pinyintable-mp3/
+pnyn/
+cedict/
+
+# work files
+*.log
+*.deb
+*.zip
+*.json
+user.req.txt
+
+README.md

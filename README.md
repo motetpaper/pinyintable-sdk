@@ -1,1 +1,0 @@
-# pinyintable-sdk

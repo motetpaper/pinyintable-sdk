@@ -1,0 +1,48 @@
+##
+## pset.txt
+## job    : provides list of available pinyin tones
+## git    : https://github.com/motetpaper/pinyintable-sdk
+## lic    : MIT
+##
+##
+##
+##
+##
+This is the data dictionary for pset.txt.
+
+pset.txt is available to help you select from valid set of pinyin sounds for speech synthesis with the user-req-txt (user request) input text file.
+
+There are two fields:
+  - Field 1: zero-based index
+  - Field 2: hanyu pinyin tone, a toned phoneme (toneme)
+
+There are 2050 rows, 410 phonemes, each with 5 tones.
+Learn more: https://github.com/motetpaper/datawork-mkpset
+
+USING PSET TO CONFIG USER-REQ-TXT
+
+To protect users, there is a rate-limiting on the Google Cloud TTS API. So, it is best to go slow and convert subsets of pset.
+
+In Linux you can simply obtain the second field with this command:
+
+```
+$ cat pset.txt | cut -d' ' -f2
+```
+
+You can select the first 50 lines for user.req.txt:
+```
+$ cat pset.txt | cut -d' ' -f2 | head -n50 > user.req.txt
+```
+
+
+You can select the next 50 lines for user.req.txt:
+```
+$ cat pset.txt | cut -d' ' -f2 | head -n100 | tail -n50 > user.req.txt
+```
+
+
+You can select only umlaut-u pinyin for user.req.txt:
+```
+$ cat pset.txt | cut -d' ' -f2 | grep ü > user.req.txt
+```
+
