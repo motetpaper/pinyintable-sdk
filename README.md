@@ -139,7 +139,7 @@ $ bash clean.sh
 
 ## `export.sh`
 
-Google Cloud Shell Only. Archives and downloads valid mp3 outfiles.
+**Google Cloud Shell in web browsers only.** Checks for valid mp3 files, then downloads a zip archive of valid mp3 to the desktop.
 ```bash
 $ bash export.sh
 ```
