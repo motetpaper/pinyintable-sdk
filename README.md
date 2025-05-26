@@ -94,9 +94,9 @@ The file size should be "8.0K" or larger. If the file is less than 8K, check the
 
 You can generate multiple pinyin sounds at the same time using `buildu.sh` and `user.req.txt`
 
-## `user.req.txt` and `buildu.sh`
+## `user.req.txt`
 
-Add one pinyin syllable per line.
+Add one pinyin syllable per line in the `user.req.txt` file.
 
 For example:
 ```
@@ -132,7 +132,7 @@ $ bash check.sh
 
 ## `clean.sh`
 
-Tabla rasa. Removes tempfiles and outfiles.
+Removes tempfiles and outfiles.
 ```bash
 $ bash clean.sh
 ```
