@@ -83,7 +83,7 @@ $ bash check.sh
 
 The files `valid.log` and/or `invalid.log` should appear in the root repo. 
 
-You can review them:
+You can review the valid ones:
 ```bash
 $ cat valid.log
 ```
