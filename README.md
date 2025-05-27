@@ -1,10 +1,18 @@
-# This repo helps you build a custom pinyintable (hanyu pinyin audio library) by generating natural-sounding Hanyu Pinyin audio files using Google Cloud Text-to-Speech (TTS) service.
+# This repo helps you build a custom pinyintable (hanyu pinyin audio library) by generating natural-sounding Hanyu Pinyin audio files using Google Cloud Text-to-Speech (TTS) service. If you simply need a generic pinyintable with pinyin sounds, you can use this [hanyu pinyin mp3 audio library](https://github.com/motetpaper/pinyintable-mp3).
 
 ## Purpose
 
-The purpose of the pinyintable is provide a readily-available library of pinyin audio files.
+The purpose of the **pinyintable** is provide a readily-available library of Hanyu Pinyin audio files.
 
-You can serve these files over HTTPS, or you can cache them locally. Also, you can combine them in various ways and/or with other software packages.
+Here is a pinyintable examplar with all 2050 pinyin tones:
+  + https://github.com/motetpaper/pinyintable-mp3
+
+You can serve these files over HTTPS, or you can cache them locally.
+
+Also, you can combine the individual pinyin table syllables to create words and phrases and/or to support other software packages.
+
+> **NOTE:**
+> ***This repo is designed for monosyllabic speech synthesis only.*** Tone sandhi means that tones may change based on combinations (e.g. when spoken *ni3hao3* becomes *ni2hao3*). Thus, you probably want to use actual Chinese characters as TTS input, and allow Google to provide you with the correct tone changes.
 
 You can use a **pinyintable** for:
   + Pinyin text-to-speech services
@@ -13,6 +21,8 @@ You can use a **pinyintable** for:
   + Spaced-repitition system listening practice
   + Mandarin Chinese videos or shorts on YouTube
   + PowerPoint slide presentations
+
+## Project Scope
 
 This repo provides a resource for using the voice, language and other options available in the Google Cloud TTS for the specific purpose of generating Hanyu Pinyin sound files.
 
@@ -43,7 +53,7 @@ If you are an absolute beginner, you should first read the Google Cloud TTS Quic
   + git
   + zip
 
-## SETUP
+# SETUP
 
 Clone the repo.
 ```bash
@@ -92,14 +102,11 @@ You can review the valid ones:
 $ cat valid.log
 ```
 
-Double-check the files with another method::
+You can review the invalid ones:
 ```bash
-$ ls -sh out
+$ cat invalid.log
 ```
 
-The file size should be "8.0K" or larger. 
-
-If the file is less than 8K, check the `tmp.json` intermediate file for possible errors.
 
 # Batch processing
 
