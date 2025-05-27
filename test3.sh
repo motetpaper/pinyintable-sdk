@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ##
-## check.sh
-## job    : validates mp3 file format, logs results
+## test2.sh
+## job    : testing the check function
 ## git    : https://github.com/motetpaper/pinyintable-sdk
 ## lic    : MIT
 ##
@@ -9,7 +9,7 @@
 ##
 ##
 PROG=$(basename $0)
-CHECKDIR="out"
+CHECKDIR="testfiles"
 
 msg() {
   echo "[$PROG] $1"
@@ -29,6 +29,7 @@ check_mp3() {
 rm -rfv valid.log
 rm -rfv invalid.log
 
+## testing `testfiles/` instead instead of `out/`
 for f in $(find ${CHECKDIR} -type f -name "*.mp3"); do
   check_mp3 $f
 done
