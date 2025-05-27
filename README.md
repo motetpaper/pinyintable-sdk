@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The purpose of the **pinyintable** is provide a readily-available library of Hanyu Pinyin audio files.
+The purpose of the **pinyintable** (in general) is to provide a readily-available library of Hanyu Pinyin audio files.
 
 Here is a pinyintable examplar with all 2050 pinyin tones:
   + https://github.com/motetpaper/pinyintable-mp3
@@ -11,8 +11,14 @@ You can serve these files over HTTPS, or you can cache them locally.
 
 Also, you can combine the individual pinyin table syllables to create words and phrases and/or to support other software packages.
 
+The purpose of this project (specifically) is to provide precise control over pinyin sound generation on Google Cloud TTS.
+
+If you use Chinese characters as input, the output Hanyu Pinyin sounds may vary. In other words, the approach that uses Chinese characters is essentially trial-and-error, due to multiple factors, such as tone sandhi (two or more characters spoken together sound may sound different) or dialect.
+
+This project is designed to provide you with the correct pinyin sound, with the correct tone, based on your input and service request -- every time.
+
 > **NOTE:**
-> ***This repo is designed for monosyllabic speech synthesis only.*** Tone sandhi means that tones may change based on combinations (e.g. when spoken *ni3hao3* becomes *ni2hao3*). Thus, you probably want to use actual Chinese characters as TTS input, and allow Google to provide you with the correct tone changes.
+> ***This repo is designed for monosyllabic pinyin speech synthesis only.*** Tone sandhi means that tones may change based on combinations (e.g. when spoken *ni3hao3* becomes *ni2hao3*). Thus, you probably want to use actual Chinese characters as TTS input, and allow Google to provide you with the correct tone changes for two or more syllables.
 
 You can use a **pinyintable** for:
   + Pinyin text-to-speech services
